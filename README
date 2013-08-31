@@ -1,0 +1,25 @@
+This is my vim configuration: .vim for Unix, vimfiles for Windows.
+The purpose of this repository is to make setting up vim on new computers 
+(esp. vitual machines) easier.
+
+Setup (Linux):
+- Install git and vim
+- Clone the repository into the .vim directory:
+    git clone https://github.com/Solumin/solumin.vim.git ~/.vim
+- Create a symlink to ~/.vimrc from the cloned .vimrc:
+    ln -s ~/.vimrc ~/.vim/.vimrc
+
+Setup (Windows):
+- Install Github for Windows and GVim
+- Clone the repository into the main Github folder
+- Create a folder link to the whole folder:
+    mklink /J C:\Users\<username>\vimfiles path-to-repo
+- Create a link to the .vimrc:
+    mlink /D C:\Users\<username>\.vimrc path-to-repo\.vimrc
+
+I'm using pathogen as my plugin manager, because Vundle seems to be a little
+more than I need at the moment.
+
+TODO:
+- Add .bat file for installing on Windows
+- Add .sh file for installing on Linux
