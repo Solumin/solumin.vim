@@ -28,7 +28,12 @@ set number
 if has("gui_running")
 	set t_C0=256
 	colorscheme redplanet
-	set guifont=Envy\ Code\ R:h11:cANSI
+endif
+
+if has("gui_gtk")
+    set guifont=Envy\ Code\ R\ 11
+else
+    set guifont=Envy\ Code\ R:h11:cANSI
 endif
 
 "" Tab length
