@@ -25,9 +25,13 @@ syntax on
 "line numbers!
 set number 
 
+" Enable 256 color terminals.
+" TODO What if we can't get 256 colors?!
+set t_Co=256
 if has("gui_running")
-	set t_C0=256
-	colorscheme redplanet
+    colorscheme redplanet
+else
+    colorscheme distinguished
 endif
 
 if has("gui_gtk")
@@ -42,7 +46,7 @@ set softtabstop=4
 
 " Shortcuts
 
-"" map jj to <Esc> -- very useful!
+"" map jj to <Esc> -- very useful, if "laggy"
 inoremap jj <Esc>
 
 "" Vim-Latex .vimrc settings
