@@ -23,10 +23,10 @@ if %errorLevel% == 0 (
 set vftarget="%USERPROFILE%\vimfiles\"
 set vrctarget="%USERPROFILE%\.vimrc"
 
-:: The %~d0%~p0 sequence gives us the current directory of the batch file.
+:: The %~dp0 sequence gives us the current directory of the batch file.
 :: The ending '\' separator is already included.
-set vfsource="%~d0%~p0"
-set vrcsource="%~d0%~p0.vimrc"
+set vfsource="%~dp0"
+set vrcsource="%~dp0.vimrc"
 
 :: Let the user can see what's going on.
 echo Vimfiles directory:

@@ -8,9 +8,15 @@ set nocompatible
 
 execute pathogen#infect()
 
-"General settings
+""General settings
+" Basic formatting/editing
 set backspace=indent,eol,start
+set textwidth=80
 
+" Match search string as it's entered
+set incsearch
+
+" Menus!
 set wildmenu
 set wildmode=list:longest,full
 
