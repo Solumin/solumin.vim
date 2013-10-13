@@ -50,10 +50,15 @@ endif
 set shiftwidth=4
 set softtabstop=4
 
+"" GUI size options
+if has("gui_running")
+    set lines=24 columns=90
+endif
+
 " Shortcuts
 
 "" map jj to <Esc> -- very useful, if "laggy"
-inoremap jj <Esc>
+"inoremap jj <Esc>
 
 "" Vim-Latex .vimrc settings
 set shellslash
