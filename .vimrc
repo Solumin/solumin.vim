@@ -35,7 +35,8 @@ set number
 " TODO What if we can't get 256 colors?!
 set t_Co=256
 if has("gui_running")
-    colorscheme redplanet
+    colorscheme lucius
+    LuciusLight
 else
     colorscheme distinguished
 endif
@@ -49,16 +50,34 @@ endif
 "" Tab length
 set shiftwidth=4
 set softtabstop=4
+set expandtab
 
 "" GUI size options
 if has("gui_running")
     set lines=24 columns=90
 endif
 
+"" Relative line numbers -- show line numbers, but they're relative to view!
+set relativenumber
+
+" Always show line numbers, but only in current window.
+:au WinEnter * :setlocal relativenumber
+:au WinLeave * :setlocal norelativenumber
+
+" Absolute Line Numbers in Insert Mode
+:au InsertEnter * :set number
+:au InsertLeave * :set relativenumber
+
 " Shortcuts
 
 "" map jj to <Esc> -- very useful, if "laggy"
 "inoremap jj <Esc>
+
+"" map \tt to :tabnew, \tr to :tabp, \ty to :tabn, \tc to :tabc
+nnoremap <Leader>tt :tabnew<CR>
+nnoremap <Leader>tr :tabp<CR>
+nnoremap <Leader>ty :tabnext<CR>
+nnoremap <Leader>tc :tabclose<CR>
 
 "" Vim-Latex .vimrc settings
 set shellslash
