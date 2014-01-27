@@ -35,8 +35,10 @@ set number
 " TODO What if we can't get 256 colors?!
 set t_Co=256
 if has("gui_running")
-    colorscheme lucius
-    LuciusLight
+    " colorscheme lucius
+    " LuciusLight
+    set background=light
+    colorscheme solarized
 else
     colorscheme distinguished
 endif
@@ -83,3 +85,7 @@ nnoremap <Leader>tc :tabclose<CR>
 set shellslash
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor='latex'
+
+"" Golang settings
+autocmd FileType go autocmd BufWritePre <buffer> Fmt
+autocmd FileType go compiler go
