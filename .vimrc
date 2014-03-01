@@ -12,6 +12,7 @@ execute pathogen#infect()
 " Basic formatting/editing
 set backspace=indent,eol,start
 set textwidth=80
+set formatoptions-=t
 
 " Match search string as it's entered
 set incsearch
@@ -35,10 +36,8 @@ set number
 " TODO What if we can't get 256 colors?!
 set t_Co=256
 if has("gui_running")
-    " colorscheme lucius
-    " LuciusLight
-    set background=light
-    colorscheme solarized
+    "set background=light
+    colorscheme molokai
 else
     colorscheme distinguished
 endif
@@ -81,11 +80,14 @@ nnoremap <Leader>tr :tabp<CR>
 nnoremap <Leader>ty :tabnext<CR>
 nnoremap <Leader>tc :tabclose<CR>
 
+"" catch typos!
+command W w
+
 "" Vim-Latex .vimrc settings
 set shellslash
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor='latex'
 
 "" Golang settings
-autocmd FileType go autocmd BufWritePre <buffer> Fmt
+"autocmd FileType go autocmd BufWritePre <buffer> Fmt
 autocmd FileType go compiler go
