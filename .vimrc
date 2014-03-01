@@ -40,7 +40,8 @@ if has("gui_running")
     set background=light
     colorscheme solarized
 else
-    colorscheme distinguished
+    set background=dark
+    colorscheme solarized
 endif
 
 if has("gui_gtk")
@@ -87,5 +88,4 @@ set grepprg=grep\ -nH\ $*
 let g:tex_flavor='latex'
 
 "" Golang settings
-autocmd FileType go autocmd BufWritePre <buffer> Fmt
 autocmd FileType go compiler go
