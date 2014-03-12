@@ -1,8 +1,12 @@
 " Set default target
 let g:Tex_DefaultTargetFormat = 'pdf'
 
-" Change viewer to use SumatraPDF
-let g:Tex_ViewRule_pdf = 'sumatrapdf -reuse-instance'
+" Change pdf viewer to SumatraPDF if on windows
+if has("win32")
+  let g:Tex_ViewRule_pdf = 'sumatrapdf -reuse-instance'
+else
+  let g:Tex_ViewRule_pdf = 'evince'
+endif
 
 " Make sure pdf-output files are compiled multiple times
 let g:Tex_MultipleCompileFormats = 'dvi,pdf'

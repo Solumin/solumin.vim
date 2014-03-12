@@ -21,6 +21,7 @@ set incsearch
 set wildmenu
 set wildmode=list:longest,full
 
+" Dir for .swp files
 "set backupdir=
 
 " Style Options
@@ -30,34 +31,44 @@ filetype indent on
 syntax on
 
 "line numbers!
-set number 
+set number
 
+"" GUI Options and Colorschemes
 " Enable 256 color terminals.
 " TODO What if we can't get 256 colors?!
 set t_Co=256
 if has("gui_running")
-    "set background=light
     colorscheme molokai
-else
     set background=dark
-    colorscheme solarized
+else
+    let g:rehash256=1
+    set background=dark
+    colorscheme molokai
 endif
 
+"" GUI layout options
+if has("gui_running")
+    set lines=24 columns=90
+    " remove toolbar and menu
+    set guioptions-=T
+    set guioptions-=m
+endif
+
+"" Set font for different gui types
 if has("gui_gtk")
     set guifont=Envy\ Code\ R\ 11
 else
     set guifont=Envy\ Code\ R:h11:cANSI
 endif
 
+"" Always display the 'tabline', which shows the active tabs
+"" Will show for both GUI and CLI vim
+set showtabline=2 " 2 = always, 1 = only if 2+ tabs open, 0 = never
+
 "" Tab length
 set shiftwidth=4
 set softtabstop=4
 set expandtab
-
-"" GUI size options
-if has("gui_running")
-    set lines=24 columns=90
-endif
 
 "" Relative line numbers -- show line numbers, but they're relative to view!
 set relativenumber
@@ -72,17 +83,32 @@ set relativenumber
 
 " Shortcuts
 
-"" map jj to <Esc> -- very useful, if "laggy"
+"" map jj to <Esc> -- very useful, if 'laggy'
 "inoremap jj <Esc>
 
 "" map \tt to :tabnew, \tr to :tabp, \ty to :tabn, \tc to :tabc
+"" Note: some of these have g<char> equivalents?
 nnoremap <Leader>tt :tabnew<CR>
+" equiv to gT:
 nnoremap <Leader>tr :tabp<CR>
+" equiv to gt:
 nnoremap <Leader>ty :tabnext<CR>
 nnoremap <Leader>tc :tabclose<CR>
 
 "" catch typos!
 command W w
+
+" Plugin management
+"" vim-airline
+set laststatus=2
+set noshowmode
+"let g:airline_powerline_fonts=1
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+let g:airline_left_sep = '▶ '
+let g:airline_right_sep = '◀'
+let g:airline_symbols.branch = '⎇ '
 
 "" Vim-Latex .vimrc settings
 set shellslash
@@ -90,5 +116,7 @@ set grepprg=grep\ -nH\ $*
 let g:tex_flavor='latex'
 
 "" Golang settings
+"" Runs go fmt on current file on every write:
+"" SUPER LAGGY AND ANNOYING AS HELL!!!
 "autocmd FileType go autocmd BufWritePre <buffer> Fmt
 autocmd FileType go compiler go
