@@ -33,6 +33,15 @@ syntax on
 "line numbers!
 set number
 
+" split settings -- more natural than default
+set splitbelow
+set splitright
+"" Switching between splits
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
 "" GUI Options and Colorschemes
 " Enable 256 color terminals.
 " TODO What if we can't get 256 colors?!
@@ -96,7 +105,7 @@ nnoremap <Leader>ty :tabnext<CR>
 nnoremap <Leader>tc :tabclose<CR>
 
 "" catch typos!
-command W w
+command! W w
 
 " Plugin management
 "" vim-airline
