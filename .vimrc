@@ -12,7 +12,7 @@ execute pathogen#infect()
 " Basic formatting/editing
 set backspace=indent,eol,start
 set textwidth=80
-set formatoptions-=t
+"set formatoptions-=t
 
 " Match search string as it's entered
 set incsearch
@@ -20,6 +20,12 @@ set incsearch
 " Menus!
 set wildmenu
 set wildmode=list:longest,full
+
+" Filetypes to ignore -- possibly put this in a config script elsewhere?
+"" Object files
+set wildignore+=*.o
+"" Haskell files
+set wildignore+=*.hi,*.ho
 
 " Dir for .swp files
 "set backupdir=
