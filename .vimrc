@@ -26,6 +26,8 @@ set wildmode=list:longest,full
 set wildignore+=*.o
 "" Haskell files
 set wildignore+=*.hi,*.ho
+"" (La)TeX files -- maybe add *.log only when looking at pdfs?
+set wildignore+=*.pdf,*.aux,*.bbl,*.log
 
 " Dir for .swp files
 "set backupdir=
