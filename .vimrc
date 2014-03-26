@@ -125,7 +125,12 @@ if !exists('g:airline_symbols')
 endif
 let g:airline_left_sep = '▶ '
 let g:airline_right_sep = '◀'
-let g:airline_symbols.branch = '⎇ '
+if has('gui_running')
+    let g:airline_symbols.branch = '⎇ '
+else
+    let g:airline_symbols.branch = '↬ '
+endif
+
 
 "" Vim-Latex .vimrc settings
 set shellslash

@@ -15,3 +15,7 @@ Setup (Windows):
 
 I'm using pathogen as my plugin manager, because Vundle seems to be a little
 more than I need at the moment.
+
+Install Checklist:
+- Submodules
+- Envy Code R
