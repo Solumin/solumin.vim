@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 if [[ -f $HOME/.vimrc ]]; then
     echo $HOME/.vimrc already exists. Either delete and run this script or just move on.
