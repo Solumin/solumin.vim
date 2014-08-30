@@ -32,7 +32,7 @@ set vrcsource="%~dp0.vimrc"
 echo Vimfiles directory:
 echo Source: %vfsource%
 echo Target: %vftarget%
-echo. 
+echo.
 
 echo .vimrc:
 echo Source: %vrcsource%
@@ -44,5 +44,11 @@ echo.
 echo Creating junctions...
 mklink /j %vftarget% %vfsource%
 mklink %vrctarget% %vrcsource%
+
+echo.
+echo Please create the git submodules:
+echo cd into ~/vimfiles/bundle
+echo git submodules init
+echo git submodules update
 
 pause

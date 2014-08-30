@@ -1,5 +1,5 @@
 This is my vim configuration: .vim for Unix, vimfiles for Windows.
-The purpose of this repository is to make setting up vim on new computers 
+The purpose of this repository is to make setting up vim on new computers
 (esp. vitual machines) easier.
 
 Setup (Linux):
@@ -17,5 +17,5 @@ I'm using pathogen as my plugin manager, because Vundle seems to be a little
 more than I need at the moment.
 
 Install Checklist:
-- Submodules
+- Submodules (should be handled automatically on Linux)
 - Envy Code R

@@ -78,10 +78,6 @@ else
     set guifont=Envy\ Code\ R:h11:cANSI
 endif
 
-"" Always display the 'tabline', which shows the active tabs
-"" Will show for both GUI and CLI vim
-set showtabline=2 " 2 = always, 1 = only if 2+ tabs open, 0 = never
-
 "" Tab length
 set shiftwidth=4
 set softtabstop=4
@@ -119,22 +115,36 @@ command! W w
 "" vim-airline
 set laststatus=2
 set noshowmode
+"" Always display the 'tabline', which shows the active tabs
+"" Will show for both GUI and CLI vim
+set showtabline=2 " 2 = always, 1 = only if 2+ tabs open, 0 = never
 "let g:airline_powerline_fonts=1
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
-let g:airline_left_sep = '▶ '
-let g:airline_right_sep = '◀'
-if has('gui_running')
-    let g:airline_symbols.branch = '⎇ '
+if has('win32')
+    let g:airline_left_sep = '>'
+    let g:airline_right_sep = '<'
+    let g:airline_symbols.branch = '$ '
 else
-    let g:airline_symbols.branch = '↬ '
+    let g:airline_left_sep = '▶ '
+    let g:airline_right_sep = '◀'
+    if has('gui_running')
+        let g:airline_symbols.branch = '⎇ '
+    else
+        let g:airline_symbols.branch = '↬ '
+    endif
 endif
-
 
 "" Vim-Latex .vimrc settings
 set shellslash
-set grepprg=grep\ -nH\ $*
+" Hopefully this sets the grep program for windows correctly...
+if has('win32')
+  set grepprg=findstr
+else
+  set grepprg=grep\ -nH\ $*
+endif
+
 let g:tex_flavor='latex'
 
 "" Golang settings
