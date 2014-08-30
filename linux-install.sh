@@ -5,7 +5,7 @@ if [[ -f $HOME/.vimrc ]]; then
 fi
 
 echo Initializing submodules...
-cd $HOME/.vimrc/bundle
+cd $HOME/.vim/bundle
 git submodule init
 echo Cloning submodules...\n
 git submodule update
