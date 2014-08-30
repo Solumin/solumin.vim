@@ -19,3 +19,7 @@ more than I need at the moment.
 Install Checklist:
 - Submodules (should be handled automatically on Linux)
 - Envy Code R
+
+**To update submodules**
+
+```git submodule foreach git pull```
