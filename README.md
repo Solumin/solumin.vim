@@ -17,8 +17,16 @@ I'm using pathogen as my plugin manager, because Vundle seems to be a little
 more than I need at the moment.
 
 Install Checklist:
-- Submodules (should be handled automatically on Linux)
-- Envy Code R
+- Submodules (handled automatically on Linux)
+    - On Windows, open a Git shell in the solumin.vim directory
+    - Execute the following commands:
+```
+git submodule init
+git sumbodule update
+```
+- Envy Code R (handled automatically on Linux)
+    - On Windows, download the font and using Window's font manager to install
+      it
 
 **To update submodules**
 
