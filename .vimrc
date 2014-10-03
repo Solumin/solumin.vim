@@ -38,13 +38,23 @@ filetype plugin on
 filetype indent on
 syntax on
 
+" setting a default encoding
+if has("multi_byte")
+    set encoding=utf-8
+    setglobal fileencoding=utf-8
+    set fileencodings=ucs-bom,utf-8,latin1
+endif
+
 "line numbers!
 set number
+"" Relative line numbers -- show line numbers, but they're relative to view!
+set relativenumber
 
 " split settings -- more natural than default
 set splitbelow
 set splitright
 "" Switching between splits
+"" C-J conflicts with vim-latex plugin
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
@@ -82,9 +92,6 @@ endif
 set shiftwidth=4
 set softtabstop=4
 set expandtab
-
-"" Relative line numbers -- show line numbers, but they're relative to view!
-set relativenumber
 
 " Always show line numbers, but only in current window.
 :au WinEnter * :setlocal relativenumber
