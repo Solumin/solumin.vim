@@ -156,6 +156,14 @@ let g:tex_flavor='latex'
 
 "" Golang settings
 "" Runs go fmt on current file on every write:
-"" SUPER LAGGY AND ANNOYING AS HELL!!!
-"autocmd FileType go autocmd BufWritePre <buffer> Fmt
 autocmd FileType go compiler go
+"" The vim-go plugin does a lot for me. Here are additional settings
+"" (See :help vim-go)
+"" Highlight whitespace errors when channels aren't written idiomatically
+let g:go_highlight_chan_whitespace_error = 1
+"" Highlight functions and methods
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+"" Automatically save after :GoFmt and use GoImports instead of GoFmt
+let g:go_fmt_autosave = 1
+let g:go_fmt_command = "goimports"
