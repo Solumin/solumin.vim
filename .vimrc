@@ -1,4 +1,4 @@
-" TODO: HIghlight search results as you type? Seems to be a default that I
+" TODO: Highlight search results as you type? Seems to be a default that I
 " disabled. Also, there seems to be a smart wrap-to-80-columns for these vim
 " script files. That is cool and very, very useful! Get for other prog
 " langauge things. (Is it just comments?)
@@ -153,7 +153,8 @@ if has('win32')
 else
   set grepprg=grep\ -nH\ $*
 endif
-
+" Disable those annoying placeholders!
+let g:Imap_UsePlaceHolders=0
 let g:tex_flavor='latex'
 
 "" Golang settings
