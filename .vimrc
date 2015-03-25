@@ -92,6 +92,8 @@ endif
 set shiftwidth=4
 set softtabstop=4
 set expandtab
+"" Since Go uses tabs and we autoformat, set tabs to something reasonable:
+set tabstop=4
 
 " Always show line numbers, but only in current window.
 :au WinEnter * :setlocal relativenumber
