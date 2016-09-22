@@ -48,7 +48,9 @@ endif
 "line numbers!
 set number
 "" Relative line numbers -- show line numbers, but they're relative to view!
-set relativenumber
+" set relativenumber
+" Unfortunately it is very slow. Disabling it makes scrolling smoother in large
+" files.
 
 " split settings -- more natural than default
 set splitbelow
