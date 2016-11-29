@@ -159,6 +159,8 @@ endif
 " Disable those annoying placeholders!
 let g:Imap_UsePlaceHolders=0
 let g:tex_flavor='latex'
+let g:Tex_DefaultTargetFromat='pdf'
+let g:Tex_MultipleCompileFormats='pdf,dvi'
 
 "" Golang settings
 "" Runs go fmt on current file on every write:
@@ -173,3 +175,7 @@ let g:go_highlight_methods = 1
 "" Automatically save after :GoFmt and use GoImports instead of GoFmt
 let g:go_fmt_autosave = 1
 let g:go_fmt_command = "goimports"
+
+"" Rust settings
+"" Run rustfmt on save
+" let g:rustfmt_autosave = 1
