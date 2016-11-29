@@ -63,13 +63,16 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 "" GUI Options and Colorschemes
-" Enable 256 color terminals.
-" TODO What if we can't get 256 colors?!
-set t_Co=256
 if has("gui_running")
-    colorscheme molokai
+    set t_Co=256    " doesn't actually do anything...?
     set background=dark
+    colorscheme molokai
 else
+    if has("win32")
+        set t_Co=16 "seems to work fine
+    else
+        set t_Co=256 "enables 256 colors for other terminals
+    endif
     let g:rehash256=1
     set background=dark
     colorscheme molokai
@@ -81,13 +84,13 @@ if has("gui_running")
     " remove toolbar and menu
     set guioptions-=T
     set guioptions-=m
-endif
 
-"" Set font for different gui types
-if has("gui_gtk")
-    set guifont=Envy\ Code\ R\ 11
-else
-    set guifont=Envy\ Code\ R:h11:cANSI
+    "" Set font for different gui types
+    if has("gui_gtk")
+        set guifont=Envy\ Code\ R\ 11
+    else
+        set guifont=Envy\ Code\ R:h11:cANSI
+    endif
 endif
 
 "" Tab length
@@ -135,8 +138,8 @@ if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
 if has('win32')
-    let g:airline_left_sep = '>'
-    let g:airline_right_sep = '<'
+    let g:airline_left_sep = ''
+    let g:airline_right_sep = ''
     let g:airline_symbols.branch = '$ '
 else
     let g:airline_left_sep = '▶ '
