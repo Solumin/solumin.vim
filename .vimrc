@@ -97,13 +97,14 @@ set expandtab
 "" Since Go uses tabs and we autoformat, set tabs to something reasonable:
 set tabstop=4
 
+" SPECIAL LINE NUMBERING: Disabled due to performance hit
 " Always show line numbers, but only in current window.
-:au WinEnter * :setlocal relativenumber
-:au WinLeave * :setlocal norelativenumber
+" :au WinEnter * :setlocal relativenumber
+" :au WinLeave * :setlocal norelativenumber
 
 " Absolute Line Numbers in Insert Mode
-:au InsertEnter * :set number
-:au InsertLeave * :set relativenumber
+" :au InsertEnter * :set number
+" :au InsertLeave * :set relativenumber
 
 " Shortcuts
 
