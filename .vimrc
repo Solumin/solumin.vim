@@ -166,10 +166,6 @@ let g:tex_flavor='latex'
 let g:Tex_DefaultTargetFromat='pdf'
 let g:Tex_MultipleCompileFormats='pdf,dvi'
 
-if has('linux')
-    let g:Tex_ViewRule_pdf = 'qpdfview --unique'
-endif
-
 "" Golang settings
 "" Runs go fmt on current file on every write:
 autocmd FileType go compiler go

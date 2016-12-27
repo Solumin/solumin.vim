@@ -5,7 +5,7 @@ let g:Tex_DefaultTargetFormat = 'pdf'
 if has("win32")
   let g:Tex_ViewRule_pdf = 'sumatrapdf -reuse-instance'
 else
-  let g:Tex_ViewRule_pdf = 'evince'
+  let g:Tex_ViewRule_pdf = 'qpdfview --unique'
 endif
 
 " Make sure pdf-output files are compiled multiple times
