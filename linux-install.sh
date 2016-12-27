@@ -25,7 +25,7 @@ select choice in "Yaourt" "Download" "I'll do it later"; do
             echo Installing through yaourt. This may take a minute.
             yaourt -S ttf-envy-code-r
             ;;
-        Download ) 
+        Download )
             echo Downloading and installing the font to ~/.fonts/truetype
             echo This will require rebuilding the font cache
             if [ ! -d $HOME/.fonts/truetype ]; then

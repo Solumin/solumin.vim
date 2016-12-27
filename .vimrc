@@ -87,7 +87,7 @@ if has("gui_running")
 
     "" Set font for different gui types
     if has("gui_gtk")
-        set guifont=Envy\ Code\ R\ 11
+        set guifont=Envy\ Code\ R\ 13
     else
         set guifont=Envy\ Code\ R:h11:cANSI
     endif
@@ -159,11 +159,16 @@ if has('win32')
 else
   set grepprg=grep\ -nH\ $*
 endif
-" Disable those annoying placeholders!
+
+" Disable those annoying placeholders in vim latex
 let g:Imap_UsePlaceHolders=0
 let g:tex_flavor='latex'
 let g:Tex_DefaultTargetFromat='pdf'
 let g:Tex_MultipleCompileFormats='pdf,dvi'
+
+if has('linux')
+    let g:Tex_ViewRule_pdf = 'qpdfview --unique'
+endif
 
 "" Golang settings
 "" Runs go fmt on current file on every write:
@@ -178,7 +183,3 @@ let g:go_highlight_methods = 1
 "" Automatically save after :GoFmt and use GoImports instead of GoFmt
 let g:go_fmt_autosave = 1
 let g:go_fmt_command = "goimports"
-
-"" Rust settings
-"" Run rustfmt on save
-" let g:rustfmt_autosave = 1
