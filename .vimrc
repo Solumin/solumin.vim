@@ -30,7 +30,7 @@ set wildignore+=*.hi,*.ho
 set wildignore+=*.pdf,*.aux,*.bbl,*.log
 
 " Dir for .swp files
-"set backupdir=
+set backupdir=$HOME/vim/swap/
 
 " Style Options
 filetype on
@@ -44,6 +44,9 @@ if has("multi_byte")
     setglobal fileencoding=utf-8
     set fileencodings=ucs-bom,utf-8,latin1
 endif
+
+" I want Unix line endings by default, even on windows.
+set fileformats=unix,dos
 
 "line numbers!
 set number
@@ -94,11 +97,11 @@ if has("gui_running")
 endif
 
 "" Tab length
-set shiftwidth=4
-set softtabstop=4
+set shiftwidth=2
+set softtabstop=2
 set expandtab
 "" Since Go uses tabs and we autoformat, set tabs to something reasonable:
-set tabstop=4
+set tabstop=2
 
 " SPECIAL LINE NUMBERING: Disabled due to performance hit
 " Always show line numbers, but only in current window.
@@ -155,7 +158,7 @@ endif
 set shellslash
 " Hopefully this sets the grep program for windows correctly...
 if has('win32')
-  set grepprg=findstr
+  set grepprg=rg\ $*
 else
   set grepprg=grep\ -nH\ $*
 endif
